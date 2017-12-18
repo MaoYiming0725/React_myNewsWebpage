@@ -24,7 +24,7 @@ class PCHeader extends React.Component {
       modalVisible : false,
       hasLogedIn: false,
       userNickName: '',
-      userId: 0,
+      userid: 0,
       action: 'login',
     };
   };
@@ -32,8 +32,7 @@ class PCHeader extends React.Component {
   componentWillMount(){
     if(localStorage.username != ''){
       this.setState({hasLogedIn: true});
-      this.setState({userNickName: localStorage.username, userId: localStorage.userid});
-
+      this.setState({userNickName: localStorage.username, userid: localStorage.userid});
     }
   }
 
@@ -58,10 +57,10 @@ class PCHeader extends React.Component {
         const username = values.r_userName;
         const userid = 1;
         console.log('Received values of form: ', values);
-        this.setState({userNickName: username, userId: userid});
+        this.setState({userNickName: username, userid: userid});
         localStorage.username = username;
-        localStorage.userId = userid;
-
+        localStorage.userid = userid;
+        console.log(localStorage.userid);
         message.success('请求成功！');
         this.setModalVisible(false);
         if(this.state.action === 'login'){
@@ -84,7 +83,7 @@ class PCHeader extends React.Component {
 
   logout(){
     localStorage.username = '';
-    localStorage.userId = 0;
+    localStorage.userid = 0;
     this.setState({hasLogedIn: false});
   }
 

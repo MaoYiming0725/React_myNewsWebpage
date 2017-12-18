@@ -44,7 +44,7 @@ class CommonComment extends React.Component {
     this.props.form.validateFields((err, values) => {
       if (!err) {
         var script = document.createElement("script");
-        script.src = 'http://newsapi.gugujiankong.com/Handler.ashx?action=comment&userid=' + localStorage.userId + "&uniquekey=" + this.props.uniquekey + "&commnet=" + values.comment,+ '&callback=handleResponse';
+        script.src = 'http://newsapi.gugujiankong.com/Handler.ashx?action=comment&userid=' + localStorage.userid + "&uniquekey=" + this.props.uniquekey + "&commnet=" + values.comment,+ '&callback=handleResponse';
         document.body.appendChild(script);
         //this.componentDidMount();
       }else{
@@ -57,7 +57,7 @@ class CommonComment extends React.Component {
     const myFetchOptions = {
       method: 'GET'
     };
-    fetch('http://newsapi.gugujiankong.com/Handler.ashx?action=uc&userid=' + localStorage.userId + "&uniquekey=" + this.props.uniquekey,myFetchOptions)
+    fetch('http://newsapi.gugujiankong.com/Handler.ashx?action=uc&userid=' + localStorage.userid + "&uniquekey=" + this.props.uniquekey,myFetchOptions)
     .then(response => response.json())
     .then(json => {
       notification['success']({message:'ReactNews提醒', description:'收藏此文章成功！'});
