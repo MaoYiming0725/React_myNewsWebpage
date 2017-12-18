@@ -30,7 +30,7 @@ export default class PCUserCenter extends React.Component {
     };
   }
   componentWillMount(){
-    document.title = "个人中心 - React News | React 驱动的新闻平台";
+    document.title = "个人中心 - React News | React 新闻平台";
   }
 
   componentDidMount(){
@@ -74,7 +74,7 @@ export default class PCUserCenter extends React.Component {
     const {userCollection, userComments} = this.state;
     const userCollectionList = userCollection.length
     ? userCollection.map((uc, index) => (
-      <Card key={index} title={uc.uniquekey} extra={<a href={`/#/detail/${uc.uniquekey}`}>查看</a>}>
+      <Card key={index} title={uc.uniquekey} extra={<a href={`/#/detail/${uc.uniquekey}`} target='_blank'>查看</a>}>
         {uc.Title}
       </Card>
     ))
@@ -82,7 +82,7 @@ export default class PCUserCenter extends React.Component {
 
     const userCommentsList = userComments.length
     ? userComments.map((comment, index) => (
-      <Card key={index} title={`您于 ${comment.datetime} 评论了文章${comment.uniquekey}`} extra={<a href={`/#/detail/${comment.uniquekey}`}>查看</a>}>
+      <Card key={index} title={`您于 ${comment.datetime} 评论了文章${comment.uniquekey}`} extra={<a href={`/#/detail/${comment.uniquekey}`} target='_blank'>查看</a>}>
         {comment.Comments}
       </Card>
     ))

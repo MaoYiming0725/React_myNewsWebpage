@@ -21,6 +21,7 @@
   margin-top: 10px;
 }
 
+
 .leftContainer {
   width: 400px;
   float: left;
@@ -44,7 +45,18 @@
 .tabs_news {
   width: 460px;
   float: left;
-  padding-left: 10px;
+  margin-left: 20px;
+}
+
+.tabs_product {
+  width: 300px;
+  float: right;
+}
+
+.tabs_product .productList {
+  height: 657px;
+  overflow: hidden;
+  margin-top: 10px;
 }
 
 .topNewsList {
